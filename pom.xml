@@ -28,11 +28,13 @@
                                                 <mainClass>com.javacodegeeks.SampleExample</mainClass>
                                         </manifest>
                                   </archive>
-                                        <source>1.5</source>
-                                        <target>1.5</target>
                                 </configuration>
                         </plugin>
                 </plugins>
+                    <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
         </build>
 </project>
 

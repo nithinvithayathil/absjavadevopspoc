@@ -36,5 +36,15 @@
                 <maven.compiler.source>1.6</maven.compiler.source>
                 <maven.compiler.target>1.6</maven.compiler.target>
         </properties>
+        <repository>
+  <id>nithin</id>
+  <url>https://pkgs.dev.azure.com/nithinvithayathil1993/nithinvithayathiltest/_packaging/nithin/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
 </project>
 

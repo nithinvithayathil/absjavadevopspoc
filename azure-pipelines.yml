@@ -14,7 +14,7 @@ steps:
 
 - task: SonarQubePrepare@4
   inputs:
-    SonarQube: 'Azure-sonar'
+    SonarQube: 'MyShuttle'
     scannerMode: 'Other'
     extraProperties: |
       # Additional properties that will be passed to the scanner, 

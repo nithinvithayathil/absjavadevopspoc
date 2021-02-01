@@ -17,11 +17,10 @@ steps:
     SonarQube: 'Azure-sonar'
     scannerMode: 'Other'
     extraProperties: |
-      sonar.projectKey=Azure
-      sonar.projectName=Azure
-      sonar.projectVersion=1.0
-      sonar.sources=src/main
-      sonar.language=java
+      mvn sonar:sonar \
+        -Dsonar.projectKey=sonartest \
+        -Dsonar.host.url=http://40.71.198.190:9000 \
+        -Dsonar.login=1b1c3eea0af2a9026322be92bac079df3c1bbd1c
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'

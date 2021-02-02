@@ -16,22 +16,22 @@ steps:
   inputs:
     SonarQube: 'Azure-sonar'
     scannerMode: 'Other'
-    extraProperties: |
-      mvn sonar:sonar \
-        -Dsonar.projectKey=sonartest \
-        -Dsonar.host.url=http://40.71.198.190:9000 \
-        -Dsonar.login=1b1c3eea0af2a9026322be92bac079df3c1bbd1c
+    extraProperties: 
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
-- task: SonarQubeAnalyze@4
+    codeCoverageToolOption: 'JaCoCo'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    mavenVersionOption: 'Default'
+    mavenOptions: '-Xmx3072m'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
+
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
